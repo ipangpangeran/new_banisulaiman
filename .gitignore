@@ -1,3 +1,4 @@
 php_errors.log
 error_log
 .user.ini
+.env

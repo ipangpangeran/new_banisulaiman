@@ -4,14 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'development';
 $query_builder = TRUE;
 
-
 $db['development'] = array(
     'dsn'      => '',
-    'hostname' => '103.196.155.102',
-    'port'     => 3306,
-    'username' => 'bansul',
-    'password' => 'ingatmatiAA26!',
-    'database' => 'bansul',
+    'hostname' => getenv('DB_HOSTNAME') ?: 'localhost',
+    'port'     => getenv('DB_PORT') ?: 3306,
+    'username' => getenv('DB_USERNAME') ?: 'root',
+    'password' => getenv('DB_PASSWORD') ?: '',
+    'database' => getenv('DB_DATABASE') ?: 'my_database',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
@@ -27,4 +26,3 @@ $db['development'] = array(
     'failover' => array(),
     'save_queries' => TRUE
 );
-
