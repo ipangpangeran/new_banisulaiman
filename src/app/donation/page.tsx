@@ -1,7 +1,7 @@
 import React from 'react';
 import { db } from '@/lib/db';
 import * as schema from '@/lib/schema';
-import { sql, eq } from 'drizzle-orm';
+import { sql, eq, and, gte } from 'drizzle-orm';
 import { Heart, CreditCard, QrCode, FileSpreadsheet, ArrowRight, ShieldCheck } from 'lucide-react';
 import styles from './Donation.module.css';
 
@@ -29,7 +29,9 @@ export default async function DonationPage() {
     .where(eq(schema.donationPrograms.isActive, true))
     .all();
 
-  // Query verified reports
+  // Query verified reports for the current year only (hides old data automatically when year changes)
+  const currentYearStart = new Date(new Date().getFullYear(), 0, 1);
+
   const dbReports = db.select({
     id: schema.donationReports.id,
     donorName: schema.donationReports.donorName,
@@ -39,7 +41,12 @@ export default async function DonationPage() {
     notes: schema.donationReports.notes
   })
     .from(schema.donationReports)
-    .where(eq(schema.donationReports.status, 'VERIFIED'))
+    .where(
+      and(
+        eq(schema.donationReports.status, 'VERIFIED'),
+        gte(schema.donationReports.date, currentYearStart)
+      )
+    )
     .orderBy(sql`${schema.donationReports.date} DESC`)
     .limit(10)
     .all() as unknown as DonationReport[];

@@ -264,6 +264,15 @@
   margin-bottom: 1.25rem;
 }
 
+.qrisImage {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1.25rem auto;
+}
+
 .qrisFooter {
   font-size: 0.7rem;
   color: #64748b;

@@ -64,6 +64,16 @@ export default async function HomePage() {
           <div className={styles.widgetGrid}>
             <div className={styles.widgetCol}>
               <HijriCalendar />
+              <div className={styles.hadithCard}>
+                <div className={styles.hadithHeader}>
+                  <BookOpen size={14} className={styles.hadithIcon} />
+                  <span>Mutiara Hikmah</span>
+                </div>
+                <p className={styles.hadithText}>
+                  "Sebaik-baik kalian adalah orang yang belajar Al-Qur'an dan mengajarkannya."
+                </p>
+                <span className={styles.hadithNarrator}>HR. Bukhari</span>
+              </div>
             </div>
             <div className={styles.widgetCol}>
               <div className={styles.welcomeBanner}>

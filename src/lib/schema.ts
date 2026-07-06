@@ -174,6 +174,7 @@ export const donationReports = sqliteTable('donation_reports', {
   amount: integer('amount').notNull(),
   date: integer('date', { mode: 'timestamp' }).default(sql`(strftime('%s', 'now'))`),
   status: text('status').default('VERIFIED').notNull(), // 'PENDING', 'VERIFIED'
+  paymentMethod: text('payment_method').default('TRANSFER').notNull(), // 'TRANSFER', 'QRIS', 'CASH'
   notes: text('notes'),
   createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`(strftime('%s', 'now'))`)
 });
