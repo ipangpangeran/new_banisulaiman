@@ -22,7 +22,7 @@
 }
 
 .welcomeBanner {
-  background: linear-gradient(rgba(11, 46, 32, 0.88), rgba(6, 29, 20, 0.96)), url('/images/masjid.jpg');
+  background: linear-gradient(rgba(11, 46, 32, 0.88), rgba(6, 29, 20, 0.96)), url('/images/welcome-bg.png');
   background-size: cover;
   background-position: center;
   color: white;
@@ -42,9 +42,9 @@
 }
 
 .welcomeSubtitle {
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   font-family: var(--font-display);
-  letter-spacing: 0.15em;
+  letter-spacing: 0em;
   color: var(--accent);
   margin-bottom: 0.75rem;
   font-weight: 600;
@@ -378,6 +378,12 @@
   font-size: 3rem;
   margin: 0 auto 1.5rem auto;
   border: 2px solid var(--border);
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
 .teacherBody h4 {

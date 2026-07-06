@@ -15,7 +15,7 @@ const translations: Translations = {
   nav_activities: { id: 'Kegiatan', en: 'Activities' },
   nav_gallery: { id: 'Galeri', en: 'Gallery' },
   nav_teachers: { id: 'Pengajar', en: 'Teachers' },
-  nav_achievements: { id: 'Prestasi', en: 'Achievements' },
+  // nav_achievements: { id: 'Prestasi', en: 'Achievements' },
   nav_admissions: { id: 'Pendaftaran', en: 'Admissions' },
   nav_donation: { id: 'Donasi', en: 'Donation' },
   nav_contact: { id: 'Kontak', en: 'Contact' },

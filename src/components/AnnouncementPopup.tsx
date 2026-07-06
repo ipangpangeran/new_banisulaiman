@@ -48,8 +48,8 @@ export const AnnouncementPopup: React.FC = () => {
           </div>
           <h3>
             {language === 'id' 
-              ? 'Pendaftaran Mahasantri Baru T.A 2025/2026 Telah Dibuka!' 
-              : 'Admissions for New Students A.Y 2025/2026 Are Open!'}
+              ? 'Pendaftaran Mahasantri Baru T.A 2026/2027 Telah Dibuka!' 
+              : 'Admissions for New Students A.Y 2026/2027 Are Open!'}
           </h3>
         </div>
         <div className={styles.body}>

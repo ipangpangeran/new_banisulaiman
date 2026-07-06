@@ -7,7 +7,22 @@ import { HeroSlider } from '@/components/HeroSlider';
 import { PrayerWidget } from '@/components/PrayerWidget';
 import { HijriCalendar } from '@/components/HijriCalendar';
 import { BookOpen, Award, CheckCircle2, MapPin, Phone, Mail, Heart, Calendar } from 'lucide-react';
+import { TeacherPhotoZoom } from '@/components/TeacherPhotoZoom';
 import styles from './Home.module.css';
+
+// Helper to determine clean teacher photo path from name
+function getTeacherPhoto(name: string): string {
+  const cleanName = name
+    .toLowerCase()
+    .replace(/h\.\s+/g, '')
+    .replace(/,\s*lc.*$/g, '')
+    .replace(/,\s*s\.ag.*$/g, '')
+    .replace(/,\s*dipl.*$/g, '')
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  return `/images/teacher-${cleanName}.jpg`;
+}
 
 // Server-side helper to retrieve site configurations
 function getSetting(settings: any[], key: string, fallback: string = ''): string {
@@ -20,7 +35,6 @@ export default async function HomePage() {
   const settingsList = db.select().from(schema.siteSettings).all();
   const programsList = db.select().from(schema.programs).all();
   const teachersList = db.select().from(schema.teachers).orderBy(schema.teachers.order).all();
-  const donationList = db.select().from(schema.donationPrograms).where(sql`is_active = 1`).all();
   
   // Fetch latest 3 published articles
   const articlesList = db.select()
@@ -33,6 +47,16 @@ export default async function HomePage() {
   // Parse list settings
   const schoolName = getSetting(settingsList, 'school_name', "Ma'had Tahfidz Bani Sulaiman");
   const schoolTagline = getSetting(settingsList, 'school_tagline', "Pondok Pesantren Tahfidz Al-Quran dan Pembelajaran Bahasa Arab");
+  const hadithText = getSetting(settingsList, 'hadith_text', "Sebaik-baik kalian adalah orang yang belajar Al-Qur'an dan mengajarkannya.");
+  const hadithNarrator = getSetting(settingsList, 'hadith_narrator', "HR. Bukhari");
+
+  // Format schoolName: if it contains "Bani Sulaiman", split it so "Bani Sulaiman" goes to the next line
+  let schoolNameLines: string[] = [schoolName];
+  if (schoolName.includes("Bani Sulaiman") && schoolName !== "Bani Sulaiman") {
+    const idx = schoolName.indexOf("Bani Sulaiman");
+    schoolNameLines = [schoolName.substring(0, idx).trim(), "Bani Sulaiman"];
+  }
+
   const historyText = getSetting(settingsList, 'site_history', '');
   const visionText = getSetting(settingsList, 'site_vision', '');
   let missionList: string[] = [];
@@ -69,16 +93,21 @@ export default async function HomePage() {
                   <BookOpen size={14} className={styles.hadithIcon} />
                   <span>Mutiara Hikmah</span>
                 </div>
-                <p className={styles.hadithText}>
-                  "Sebaik-baik kalian adalah orang yang belajar Al-Qur'an dan mengajarkannya."
-                </p>
-                <span className={styles.hadithNarrator}>HR. Bukhari</span>
+                <p className={styles.hadithText}>"{hadithText}"</p>
+                <span className={styles.hadithNarrator}>{hadithNarrator}</span>
               </div>
             </div>
             <div className={styles.widgetCol}>
               <div className={styles.welcomeBanner}>
                 <span className={styles.welcomeSubtitle}>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْمِ</span>
-                <h2>{schoolName}</h2>
+                <h2>
+                  {schoolNameLines.map((line, idx) => (
+                    <React.Fragment key={idx}>
+                      {idx > 0 && <br />}
+                      {line}
+                    </React.Fragment>
+                  ))}
+                </h2>
                 <p>{schoolTagline}</p>
               </div>
             </div>
@@ -193,8 +222,8 @@ export default async function HomePage() {
           <div className="grid grid-4">
             {teachersList.filter(t => t.type === 'TEACHER').slice(0, 4).map((teacher) => (
               <div key={teacher.id} className={`${styles.teacherCard} card`}>
-                <div className={styles.avatarPlaceholder}>
-                  <span>👳</span>
+                <div className={styles.avatarWrapper}>
+                  <TeacherPhotoZoom src={getTeacherPhoto(teacher.name)} alt={teacher.name} size={90} />
                 </div>
                 <div className={styles.teacherBody}>
                   <h4>{teacher.name}</h4>
@@ -272,31 +301,7 @@ export default async function HomePage() {
               </Link>
             </div>
             
-            <div className={styles.donationProgramsCol}>
-              <h3>Program Donasi Aktif</h3>
-              <div className={styles.programList}>
-                {donationList.slice(0, 2).map((prog) => {
-                  const percent = prog.targetAmount ? Math.min(100, Math.round((prog.raisedAmount / prog.targetAmount) * 100)) : 0;
-                  return (
-                    <div key={prog.id} className={styles.miniProgCard}>
-                      <h4>{prog.title}</h4>
-                      <p>{prog.description}</p>
-                      {prog.targetAmount && (
-                        <div className={styles.progressSection}>
-                          <div className={styles.progressBar}>
-                            <div className={styles.progressFill} style={{ width: `${percent}%` }} />
-                          </div>
-                          <div className={styles.progressLabels}>
-                            <span>Rp {prog.raisedAmount.toLocaleString('id-ID')}</span>
-                            <span>{percent}% dari Rp {prog.targetAmount.toLocaleString('id-ID')}</span>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            {/* Right side left empty as requested */}
           </div>
         </div>
       </section>

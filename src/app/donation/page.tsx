@@ -23,12 +23,6 @@ const mockReports: DonationReport[] = [
 ];
 
 export default async function DonationPage() {
-  // Query active donation programs
-  const programs = db.select()
-    .from(schema.donationPrograms)
-    .where(eq(schema.donationPrograms.isActive, true))
-    .all();
-
   // Query verified reports for the current year only (hides old data automatically when year changes)
   const currentYearStart = new Date(new Date().getFullYear(), 0, 1);
 
@@ -60,44 +54,6 @@ export default async function DonationPage() {
         <div className="container text-center">
           <h1>Donasi & Amal Shodaqoh</h1>
           <p>Investasi Akhirat Melalui Pembinaan Santri Penghafal Al-Qur'an</p>
-        </div>
-      </section>
-
-      {/* Main campaigns */}
-      <section className="section">
-        <div className="container">
-          <h2 className="section-title">Program Donasi Aktif</h2>
-          <div className="grid grid-2">
-            {programs.map((prog) => {
-              const percent = prog.targetAmount ? Math.min(100, Math.round((prog.raisedAmount / prog.targetAmount) * 100)) : 0;
-              return (
-                <div key={prog.id} className={`${styles.progCard} card`}>
-                  <div className={styles.progHeader}>
-                    <Heart size={20} className={styles.heartIcon} />
-                    <h3>{prog.title}</h3>
-                  </div>
-                  <p>{prog.description}</p>
-                  
-                  {prog.targetAmount && (
-                    <div className={styles.progProgress}>
-                      <div className={styles.progressRow}>
-                        <span className={styles.progressVal}>
-                          Terkumpul: <strong>Rp {prog.raisedAmount.toLocaleString('id-ID')}</strong>
-                        </span>
-                        <span className={styles.progressPercent}>{percent}%</span>
-                      </div>
-                      <div className={styles.progressBar}>
-                        <div className={styles.progressFill} style={{ width: `${percent}%` }} />
-                      </div>
-                      <div className={styles.targetLabel}>
-                        Target: Rp {prog.targetAmount.toLocaleString('id-ID')}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
         </div>
       </section>
 

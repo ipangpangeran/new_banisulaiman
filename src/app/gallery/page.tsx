@@ -1,27 +1,29 @@
 import React from 'react';
 import { db } from '@/lib/db';
 import * as schema from '@/lib/schema';
+import { eq } from 'drizzle-orm';
 import { GalleryGrid } from '@/components/GalleryGrid';
 import styles from './Gallery.module.css';
 
 export default async function GalleryPage() {
-  // Query gallery items from sqlite
-  const items = db.select({
+  // Query gallery items from sqlite joined with media for photo paths
+  const dbItems = db.select({
     id: schema.galleryItems.id,
     type: schema.galleryItems.type,
-    mediaUrl: schema.galleryItems.videoUrl, // fallback / mapped in seed if available
-    caption: schema.galleryItems.type // simplified mock mapping
+    videoUrl: schema.galleryItems.videoUrl,
+    filePath: schema.media.filePath,
+    caption: schema.galleryItems.caption
   })
     .from(schema.galleryItems)
+    .leftJoin(schema.media, eq(schema.galleryItems.mediaId, schema.media.id))
     .all();
 
-  // If db has items, we map them appropriately. Since we haven't seeded gallery items,
-  // the client component handles falling back to beautiful default mock photos/videos.
-  const mappedItems = items.map(item => ({
+  // If database contains items, map them correctly.
+  const mappedItems = dbItems.map(item => ({
     id: item.id,
-    type: item.type as 'PHOTO' | 'VIDEO',
-    mediaUrl: item.mediaUrl || '',
-    caption: item.caption || ''
+    type: item.type as 'PHOTO' | 'VIDEO' | 'INSTAGRAM',
+    mediaUrl: item.type === 'PHOTO' ? (item.filePath || '') : (item.videoUrl || ''),
+    caption: item.caption || (item.type === 'PHOTO' ? 'Dokumentasi Foto' : item.type === 'INSTAGRAM' ? 'Dokumentasi Instagram' : 'Dokumentasi Video')
   }));
 
   return (

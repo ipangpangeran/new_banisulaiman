@@ -49,7 +49,7 @@ export default async function AchievementsPage() {
       {/* Banner */}
       <section className={styles.banner}>
         <div className="container text-center">
-          <h1>Prestasi Mahasantri</h1>
+          <h1> Mahasantri</h1>
           <p>Apresiasi Dedikasi, Prestasi Kompetisi, dan Sertifikasi Keagamaan</p>
         </div>
       </section>

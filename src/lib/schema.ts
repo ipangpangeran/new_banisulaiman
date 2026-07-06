@@ -113,6 +113,7 @@ export const galleryItems = sqliteTable('gallery_items', {
   type: text('type').default('PHOTO').notNull(), // 'PHOTO' or 'VIDEO'
   mediaId: integer('media_id').references(() => media.id),
   videoUrl: text('video_url'),
+  caption: text('caption'),
   createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`(strftime('%s', 'now'))`)
 });
 

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LayoutDashboard, FileText, GraduationCap, Settings, LogOut, ShieldAlert, Sun, Moon, ExternalLink, Heart } from 'lucide-react';
+import { LayoutDashboard, FileText, GraduationCap, Settings, LogOut, ShieldAlert, Sun, Moon, ExternalLink, Heart, Images } from 'lucide-react';
 import { useTheme } from '@/components/ThemeContext';
 import styles from './layout.module.css';
 
@@ -41,6 +41,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: '/admin/articles', label: 'Artikel & Berita', icon: <FileText size={18} /> },
     { href: '/admin/admissions', label: 'PPDB Pendaftaran', icon: <GraduationCap size={18} /> },
     { href: '/admin/donations', label: 'Laporan Donasi', icon: <Heart size={18} /> },
+    { href: '/admin/gallery', label: 'Galeri Media', icon: <Images size={18} /> },
     { href: '/admin/settings', label: 'Pengaturan Web', icon: <Settings size={18} /> },
   ];
 

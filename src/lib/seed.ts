@@ -200,7 +200,7 @@ async function seed() {
       },
       {
         title: 'Beasiswa Penuh Penghafal Al-Qur\'an',
-        description: 'Sponsori beasiswa penuh biaya pendidikan, kitab, asrama, dan ujian kelayakan bagi santri ikhwan berprestasi.',
+        description: 'Sponsori beasiswa penuh biaya pendidikan, kitab, asrama, dan ujian kelayakan bagi santri ikhwan ber.',
         targetAmount: 150000000,
         raisedAmount: 42000000,
         isActive: true,

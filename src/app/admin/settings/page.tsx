@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Save, AlertCircle, CheckCircle2, Settings, ListPlus } from 'lucide-react';
+import { Save, AlertCircle, CheckCircle2, Settings, ListPlus, BookOpen } from 'lucide-react';
 import styles from './Settings.module.css';
 
 export default function AdminSettingsPage() {
@@ -20,6 +20,8 @@ export default function AdminSettingsPage() {
     stats_teachers: '',
     stats_alumni: '',
     stats_buildings: '',
+    hadith_text: '',
+    hadith_narrator: '',
   });
 
   const [missionInput, setMissionInput] = useState('');
@@ -50,6 +52,8 @@ export default function AdminSettingsPage() {
           stats_teachers: data.stats_teachers || '0',
           stats_alumni: data.stats_alumni || '0',
           stats_buildings: data.stats_buildings || '0',
+          hadith_text: data.hadith_text || '',
+          hadith_narrator: data.hadith_narrator || '',
         });
 
         // Parse mission lists
@@ -221,6 +225,24 @@ export default function AdminSettingsPage() {
           <div className="form-group">
             <label className="form-label">Butir-Butir Misi (Tuliskan satu misi per baris/line)</label>
             <textarea rows={5} className="form-control" value={missionInput} onChange={(e) => setMissionInput(e.target.value)} placeholder="Misi 1&#10;Misi 2&#10;Misi 3" />
+          </div>
+        </div>
+
+        {/* Section: Mutiara Hikmah */}
+        <div className={styles.sectionCard}>
+          <div className={styles.sectionHeader}>
+            <BookOpen className={styles.secIcon} size={18} />
+            <h2>Mutiara Hikmah (Halaman Utama)</h2>
+          </div>
+
+          <div className="form-group">
+            <label className="form-label">Teks Hadits / Kutipan Hari Ini</label>
+            <textarea rows={3} name="hadith_text" className="form-control" value={inputs.hadith_text} onChange={handleChange} placeholder="Contoh: Sebaik-baik kalian adalah orang yang belajar Al-Qur'an dan mengajarkannya." required />
+          </div>
+
+          <div className="form-group" style={{ maxWidth: '300px' }}>
+            <label className="form-label">Perawi / Riwayat / Sumber</label>
+            <input type="text" name="hadith_narrator" className="form-control" value={inputs.hadith_narrator} onChange={handleChange} placeholder="Contoh: HR. Bukhari" required />
           </div>
         </div>
 

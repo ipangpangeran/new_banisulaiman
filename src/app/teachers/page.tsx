@@ -3,6 +3,22 @@ import { db } from '@/lib/db';
 import * as schema from '@/lib/schema';
 import { Mail, GraduationCap, Briefcase, Award } from 'lucide-react';
 import styles from './Teachers.module.css';
+import { TeacherPhotoZoom } from '@/components/TeacherPhotoZoom';
+import { BoardSlider } from '@/components/BoardSlider';
+
+// Helper to determine clean teacher photo path from name
+function getTeacherPhoto(name: string): string {
+  const cleanName = name
+    .toLowerCase()
+    .replace(/h\.\s+/g, '')
+    .replace(/,\s*lc.*$/g, '')
+    .replace(/,\s*s\.ag.*$/g, '')
+    .replace(/,\s*dipl.*$/g, '')
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  return `/images/teacher-${cleanName}.jpg`;
+}
 
 export default async function TeachersPage() {
   // Query all instructors & board members
@@ -32,7 +48,7 @@ export default async function TeachersPage() {
             {instructors.map((teacher) => (
               <div key={teacher.id} className={styles.teacherRow}>
                 <div className={styles.avatarCol}>
-                  <div className={styles.avatarEmoji}>👳</div>
+                  <TeacherPhotoZoom src={getTeacherPhoto(teacher.name)} alt={teacher.name} size={80} />
                 </div>
                 <div className={styles.infoCol}>
                   <h3>{teacher.name}</h3>
@@ -64,19 +80,7 @@ export default async function TeachersPage() {
       <section className="section section-bg-alt">
         <div className="container">
           <h2 className="section-title">Pengurus Yayasan</h2>
-          <div className={styles.boardGrid}>
-            {boardMembers.map((member) => (
-              <div key={member.id} className={`${styles.boardCard} card`}>
-                <div className={styles.boardIcon}>🏛️</div>
-                <h3>{member.name}</h3>
-                <span className={styles.boardPos}>{member.position}</span>
-                <p>{member.biography}</p>
-                {member.education && (
-                  <span className={styles.boardEdu}>{member.education}</span>
-                )}
-              </div>
-            ))}
-          </div>
+          <BoardSlider boardMembers={boardMembers} />
         </div>
       </section>
     </div>

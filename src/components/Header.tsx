@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
     { href: '/activities', label: t('nav_activities') },
     { href: '/gallery', label: t('nav_gallery') },
     { href: '/teachers', label: t('nav_teachers') },
-    { href: '/achievements', label: t('nav_achievements') },
+    // { href: '/achievements', label: t('nav_achievements') },
     { href: '/admissions', label: t('nav_admissions') },
     { href: '/donation', label: t('nav_donation') },
     { href: '/contact', label: t('nav_contact') },
