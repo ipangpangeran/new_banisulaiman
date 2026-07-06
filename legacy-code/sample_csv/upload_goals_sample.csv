@@ -1,0 +1,16 @@
+"Type(G = Goal, M = Measure)",Goal Detail / Measure Detail
+G,Goal 1
+M,"Measure 1,1"
+M,"Measure 1,2"
+M,"Measure 1,3"
+G,Goal 2
+M,"Measure 2,1"
+M,"Measure 2,2"
+G,Goal 3
+G,Goal 4
+M,"Measure 2,2"
+G,Goal 3
+G,Goal 4
+M,"Measure 2,2"
+G,Goal 3
+G,Goal 4

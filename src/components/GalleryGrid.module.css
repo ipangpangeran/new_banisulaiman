@@ -1,0 +1,247 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.tabBtn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tabBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.activeTab {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
+}
+
+/* Columnar Masonry Layout */
+.masonryGrid {
+  column-count: 3;
+  column-gap: 2rem;
+  width: 100%;
+}
+
+.gridItem {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(var(--accent-rgb), 0.2);
+}
+
+.mediaContainer {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary-dark);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 81, 50, 0.4);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-normal);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlayIcon {
+  color: white;
+}
+
+.videoOverlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+}
+
+.card:hover .videoOverlay {
+  background-color: rgba(15, 81, 50, 0.6);
+}
+
+.playCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-fast);
+}
+
+.card:hover .playCircle {
+  transform: scale(1.1);
+}
+
+.captionBox {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.captionBox p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+.navBtnLeft, .navBtnRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  opacity: 0.6;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: opacity var(--transition-fast);
+}
+
+.navBtnLeft:hover, .navBtnRight:hover {
+  opacity: 1;
+}
+
+.navBtnLeft { left: 2rem; }
+.navBtnRight { right: 2rem; }
+
+.lightboxContent {
+  max-width: 85%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightboxImage {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-sm);
+}
+
+.videoWrapper {
+  width: 800px;
+  max-width: 100%;
+  height: 450px;
+  background-color: black;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.lightboxCaption {
+  margin-top: 1.5rem;
+  color: #e2e8f0;
+  font-weight: 500;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 900px) {
+  .masonryGrid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .masonryGrid {
+    column-count: 1;
+  }
+  .lightbox {
+    padding: 1.5rem;
+  }
+  .navBtnLeft, .navBtnRight {
+    display: none;
+  }
+  .videoWrapper {
+    height: 250px;
+  }
+}

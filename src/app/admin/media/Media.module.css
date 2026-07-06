@@ -1,0 +1,372 @@
+.loading {
+  text-align: center;
+  padding: 4rem 0;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header h1 {
+  font-size: 1.85rem;
+  color: #0f172a;
+}
+
+:global([data-theme='dark']) .header h1 {
+  color: white;
+}
+
+.header p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+/* Split Layout */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2.8fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Browser column */
+.browserCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.filtersRow {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: 0 0.75rem;
+  width: 100%;
+}
+
+.searchIcon {
+  color: var(--text-muted);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.6rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.folderTabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.folderBtn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.folderBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.activeFolder {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-color: var(--primary) !important;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-secondary);
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Grid preview cards */
+.mediaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.mediaCard {
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.mediaCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+
+:global([data-theme='dark']) .mediaCard:hover {
+  border-color: var(--accent);
+}
+
+.cardPreview {
+  height: 120px;
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fileIcon {
+  color: var(--text-muted);
+}
+
+.cardInfo {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.fileName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fileSize {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Right Column upload form */
+.uploadCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--accent);
+}
+
+.uploadCard h3 {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+:global([data-theme='dark']) .uploadCard h3 {
+  color: white;
+}
+
+.uploadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Modal details preview */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 550px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1.5px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalHeader h2 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0;
+}
+
+:global([data-theme='dark']) .modalHeader h2 {
+  color: white;
+}
+
+.closeBtn {
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.closeBtn:hover {
+  color: var(--danger);
+}
+
+.modalBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modalPreview {
+  height: 240px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.previewImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.largeFileIcon {
+  color: var(--text-muted);
+}
+
+.modalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.infoRow {
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.infoRow strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.infoRow code {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+}
+
+.modalFooter {
+  padding: 1.25rem 1.5rem;
+  border-top: 1.5px solid var(--border);
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: 1px solid transparent;
+  color: #ef4444;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.deleteBtn:hover {
+  background-color: rgba(239, 68, 68, 0.08);
+  border-color: #ef4444;
+}
+
+.copyBtn {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Responsiveness overrides */
+@media (max-width: 1024px) {
+  .mediaGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .mediaGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

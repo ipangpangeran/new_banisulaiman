@@ -1,0 +1,247 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.85rem;
+  color: #0f172a;
+}
+
+:global([data-theme='dark']) .header h1 {
+  color: white;
+}
+
+.header p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.metricCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue { background-color: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.green { background-color: rgba(34, 197, 94, 0.1); color: #22c55e; }
+.gold { background-color: rgba(212, 175, 55, 0.15); color: #c49b3c; }
+.purple { background-color: rgba(168, 85, 247, 0.1); color: #a855f7; }
+
+.metricInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.metricInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.1;
+  color: #0f172a;
+}
+
+:global([data-theme='dark']) .metricInfo h3 {
+  color: white;
+}
+
+/* Split Columns */
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+}
+
+.listCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.cardHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1.5px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardHeader h3 {
+  font-size: 1.05rem;
+  color: #0f172a;
+  margin-bottom: 0;
+}
+
+:global([data-theme='dark']) .cardHeader h3 {
+  color: white;
+}
+
+.viewAll {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+:global([data-theme='dark']) .viewAll {
+  color: var(--accent);
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.empty {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85rem;
+  padding: 2rem 0;
+}
+
+/* Applicants list items */
+.applicantsList, .articlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.applicantRow, .articleRow {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.applicantRow:last-child, .articleRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.applicantInitial {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background-color: rgba(var(--primary-rgb), 0.08);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+}
+
+.applicantDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.applicantDetails strong {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.applicantDetails span {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.statusBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.pending { background-color: #fef3c7; color: #d97706; }
+.approved { background-color: #dcfce7; color: #15803d; }
+.rejected { background-color: #fee2e2; color: #b91c1c; }
+
+/* Article rows */
+.articleDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.articleDetails strong {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+}
+
+.articleDate {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.statusLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.published { background-color: #dcfce7; color: #166534; }
+.draft { background-color: #e2e8f0; color: #475569; }
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .splitGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+}

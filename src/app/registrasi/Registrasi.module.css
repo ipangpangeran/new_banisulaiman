@@ -1,0 +1,135 @@
+.wrapper {
+  padding: 3rem 0 5rem 0;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  font-family: var(--font-display);
+}
+
+.backLink:hover {
+  color: var(--accent-hover);
+}
+
+.formCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--primary);
+}
+
+.formHeader {
+  text-align: center;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.formHeader span {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-hover);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.formHeader h2 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+:global([data-theme='dark']) .formHeader h2 {
+  color: white;
+}
+
+.formHeader p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.sectionBlock {
+  border: 1px solid var(--border);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.sectionBlock h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Success Card */
+.successCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 4rem 3rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border-top: 5px solid var(--success);
+}
+
+.successIcon {
+  color: var(--success);
+  margin-bottom: 1.5rem;
+}
+
+.successCard h2 {
+  font-size: 1.85rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+:global([data-theme='dark']) .successCard h2 {
+  color: white;
+}
+
+.successCard p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  text-align: justify;
+}
+
+.successActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .formCard {
+    padding: 2rem 1.5rem;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .successActions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

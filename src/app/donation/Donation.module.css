@@ -1,0 +1,345 @@
+.banner {
+  background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.85)), url('/images/bg-home.jpg') center/cover no-repeat;
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.banner h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.banner p {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.progCard {
+  padding: 2.5rem;
+  border-top: 4px solid var(--primary);
+}
+
+.progHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.heartIcon {
+  color: var(--accent-hover);
+}
+
+.progHeader h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0;
+  color: var(--primary-dark);
+}
+
+:global([data-theme='dark']) .progHeader h3 {
+  color: white;
+}
+
+.progCard p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.progProgress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.progressVal {
+  color: var(--text-secondary);
+}
+
+.progressVal strong {
+  color: var(--primary);
+}
+
+:global([data-theme='dark']) .progressVal strong {
+  color: var(--accent);
+}
+
+.progressPercent {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+:global([data-theme='dark']) .progressPercent {
+  color: var(--accent);
+}
+
+.progressBar {
+  height: 8px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+:global([data-theme='dark']) .progressFill {
+  background-color: var(--accent);
+}
+
+.targetLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Methods Grid */
+.methodsGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.methodIcon {
+  color: var(--primary);
+}
+
+:global([data-theme='dark']) .methodIcon {
+  color: var(--accent);
+}
+
+.sectionHeader h2 {
+  font-size: 1.65rem;
+  margin-bottom: 0;
+}
+
+.bankSection p, .qrisSection p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.bankCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--primary);
+}
+
+.bankBrand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.75rem;
+  background-color: rgba(var(--primary-rgb), 0.05);
+  color: var(--primary);
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.bankDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.bankDetails strong {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.accountNumber {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+:global([data-theme='dark']) .accountNumber {
+  color: var(--accent);
+}
+
+.accountHolder {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.confirmationNotice {
+  background-color: rgba(var(--primary-rgb), 0.05);
+  border: 1px solid rgba(var(--primary-rgb), 0.15);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.confirmationNotice strong {
+  color: var(--primary);
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.confirmationNotice p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* QRIS Section */
+.qrisContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.qrisBox {
+  background-color: white;
+  color: black;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.qrisHeader {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #1e293b;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.qrisQrPlaceholder {
+  height: 200px;
+  background-color: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+}
+
+.qrisFooter {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-family: monospace;
+}
+
+/* Reports Table */
+.tableCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.reportsTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.reportsTable th {
+  background-color: var(--bg-primary);
+  border-bottom: 2px solid var(--border);
+  padding: 1rem 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.reportsTable td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.reportsTable tr:last-child td {
+  border-bottom: none;
+}
+
+.donorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.donorNotes {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.amountText {
+  color: var(--primary);
+}
+
+:global([data-theme='dark']) .amountText {
+  color: var(--accent);
+}
+
+.verifiedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--success);
+  background-color: rgba(25, 135, 84, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .methodsGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,11 @@
+employee_id,first_name,last name,emp_mobile,emp_email,date_of_joining (dd-mm-yyyy),dept_name,emp_job_title,emp_grade,emp_band,perf_mgr_one_empid,perf_mgr_two_empid,"Status(0=Inactive,1=Active)",emp_type,user_zone,location,bussiness_unit,"is_manager (Y=yes,N=no)"
+100,a,a,9999999999,xysz@gmail.com,12-09-2019,RSM,RSM,CF1,NIL,,,1,Permanent,Raichur,Potnal,Retail,Y
+200,b,b,,cdvs@gmail.com,12-09-2019,RSM,Sr.RSM,CF2,NIL,,,1,Permanent,Raichur,Manvi,Retail,Y
+300,c,c,,xy@gmail.com,12-09-2019,RSM,RSM,CF1,NIL,100,100,1,Permanent,Raichur,Potnal,Retail,N
+400,d,d,,xyzvfvf@gmail.com,12-09-2019,RSM,RSS,CF1,NIL,100,100,1,Permanent,Raichur,Sirwar,Retail,N
+500,e,e,,xsfd@gmail.com,12-09-2019,RSM,RSM,CF1,NIL,100,100,1,Permanent,Raichur,Potnal,Retail,N
+600,f,f,,gyu@gmail.com,12-09-2019,RSM,RSM,CF1,NIL,100,100,1,Permanent,Raichur,Potnal,Retail,Y
+700,g,g,,kom@gmail.com,12-09-2019,RSM,Sr.RSM,CF2,NIL,100,100,1,Permanent,Raichur,Manvi,Retail,Y
+800,h,h,,xqs@gmail.com,12-09-2019,RSM,RSM,CF1,NIL,100,100,1,Permanent,Raichur,Potnal,Retail,N
+900,i,i,,sac@gmail.com,12-09-2019,RSM,RSS,CF1,NIL,100,100,1,Permanent,Raichur,Sirwar,Retail,N
+1000,j,j,,aca@gmail.com,12-09-2019,RSM,RSM,CF1,NIL,100,100,1,Permanent,Raichur,Potnal,Retail,N

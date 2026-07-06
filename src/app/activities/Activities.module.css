@@ -1,0 +1,208 @@
+.banner {
+  background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.85)), url('/images/bg-home.jpg') center/cover no-repeat;
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.banner h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.banner p {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.tabsList {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.tabBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.activeTab {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.15);
+}
+
+/* Timeline Layout */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--border);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timelineItem {
+  padding: 1rem 2.5rem;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timelineIcon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: -20px;
+  top: 1.25rem;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-full);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.right .timelineIcon {
+  left: -20px;
+}
+
+.timelineContent {
+  padding: 1.75rem;
+  position: relative;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.daily {
+  background-color: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary);
+}
+
+.weekly {
+  background-color: rgba(212, 175, 55, 0.15);
+  color: var(--accent-hover);
+}
+
+.annual {
+  background-color: rgba(25, 135, 84, 0.15);
+  color: var(--success);
+}
+
+.date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.timelineContent h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-dark);
+}
+
+:global([data-theme='dark']) .timelineContent h3 {
+  color: white;
+}
+
+.timelineContent p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.videoLink {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.videoLink a:hover {
+  text-decoration: underline;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 31px;
+  }
+  
+  .timelineItem {
+    width: 100%;
+    padding-left: 5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .left, .right {
+    left: 0;
+  }
+  
+  .timelineIcon {
+    left: 11px !important;
+    right: auto;
+  }
+}

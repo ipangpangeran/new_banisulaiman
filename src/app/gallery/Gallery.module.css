@@ -1,0 +1,23 @@
+.banner {
+  background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.85)), url('/images/bg-home.jpg') center/cover no-repeat;
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.banner h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.banner p {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.wrapper {
+  overflow: hidden;
+}

@@ -1,0 +1,99 @@
+.banner {
+  background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.85)), url('/images/bg-home.jpg') center/cover no-repeat;
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.banner h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.banner p {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.achCard {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  align-items: start;
+}
+
+.iconContainer {
+  width: 54px;
+  height: 54px;
+  background-color: rgba(var(--accent-rgb), 0.15);
+  color: var(--accent-hover);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trophy {
+  stroke-width: 2px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.info h3 {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+:global([data-theme='dark']) .info h3 {
+  color: white;
+}
+
+.info p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+.certCheck {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--success);
+  align-self: flex-start;
+  background-color: rgba(25, 135, 84, 0.08);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 600px) {
+  .achCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .certCheck {
+    align-self: center;
+  }
+}

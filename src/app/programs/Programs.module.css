@@ -1,0 +1,195 @@
+.banner {
+  background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.85)), url('/images/bg-home.jpg') center/cover no-repeat;
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.banner h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.banner p {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.programGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.programCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  border-left: 5px solid var(--primary);
+}
+
+.programCard:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(var(--accent-rgb), 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.iconBox {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background-color: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.headerInfo h2 {
+  font-size: 1.65rem;
+  margin-bottom: 0.5rem;
+}
+
+.metadata {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+}
+
+.openDot {
+  background-color: var(--success);
+}
+
+.closedDot {
+  background-color: var(--danger);
+}
+
+.cardBody {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.description h3, .curriculum h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.description p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.currList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.currList li {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.checkIcon {
+  color: var(--accent-hover);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.cardFooter {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Scholarship Box */
+.scholarshipCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--accent);
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(var(--accent-rgb), 0.15);
+  color: var(--accent-hover);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.scholarshipCard h2 {
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+}
+
+.scholarshipCard p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.scholarshipCta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive Overrides */
+@media (max-width: 800px) {
+  .cardBody {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

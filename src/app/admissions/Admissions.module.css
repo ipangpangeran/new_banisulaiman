@@ -1,0 +1,243 @@
+.banner {
+  background: linear-gradient(rgba(15, 81, 50, 0.85), rgba(15, 81, 50, 0.85)), url('/images/bg-home.jpg') center/cover no-repeat;
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.banner h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.banner p {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0;
+}
+
+.infoLayout {
+  display: grid;
+  grid-template-columns: 2.8fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.mainCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionBlock {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.blockTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.titleIcon {
+  color: var(--primary);
+}
+
+.blockTitle h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  color: var(--primary-dark);
+}
+
+:global([data-theme='dark']) .blockTitle h2 {
+  color: white;
+}
+
+.reqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.reqList li {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.alertIcon {
+  color: var(--accent-hover);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.stepCard {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  position: relative;
+  border-top: 3px solid var(--primary);
+}
+
+.stepNumber {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: rgba(var(--primary-rgb), 0.1);
+  line-height: 1;
+}
+
+.stepCard h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.stepCard p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Sidebar Widgets */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.actionCard {
+  background-color: var(--primary-dark);
+  color: white;
+  border: 1px solid var(--primary);
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--accent);
+}
+
+.actionCard h3 {
+  font-size: 1.35rem;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.actionCard p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+.orDivider::before, .orDivider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.orDivider:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.orDivider:not(:empty)::after {
+  margin-left: .5em;
+}
+
+.widget {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.widget h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.downloadList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.downloadLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.downloadLink:hover {
+  background-color: rgba(var(--accent-rgb), 0.1);
+  border-color: var(--accent);
+  color: var(--accent-hover);
+}
+
+.costBadge {
+  display: inline-block;
+  background-color: rgba(25, 135, 84, 0.15);
+  color: var(--success);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .infoLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+}

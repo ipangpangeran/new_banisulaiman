@@ -1,0 +1,127 @@
+.widgetCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.widgetCard:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(var(--accent-rgb), 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pin {
+  color: var(--accent);
+}
+
+.clockIcon {
+  color: var(--primary);
+}
+
+.timeDisplay {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.timeDisplay h2 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--primary-dark);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+:global([data-theme='dark']) .timeDisplay h2 {
+  color: white;
+}
+
+.nextText {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.prayerList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prayerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.prayerName {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.prayerTime {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+/* Active prayer state highlight */
+.activeRow {
+  background-color: rgba(var(--primary-rgb), 0.08);
+  border-color: rgba(var(--primary-rgb), 0.15);
+}
+
+.activeRow .prayerName {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.activeRow .prayerTime {
+  color: var(--primary);
+}
+
+:global([data-theme='dark']) .activeRow {
+  background-color: rgba(var(--accent-rgb), 0.12);
+  border-color: rgba(var(--accent-rgb), 0.25);
+}
+
+:global([data-theme='dark']) .activeRow .prayerName {
+  color: var(--accent);
+}
+
+:global([data-theme='dark']) .activeRow .prayerTime {
+  color: var(--accent);
+}

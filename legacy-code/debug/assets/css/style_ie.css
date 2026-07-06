@@ -1,0 +1,155 @@
+
+.login-form_box,
+#demo {
+    position: relative;
+    top: 0 !important;
+    transform: none !important;
+}
+.show-ie-right {
+    right: 0;
+    top: 0;
+    position: absolute !important;
+}
+.show-ie-right-color {
+    right: 0;
+    top: 6px;
+    position: absolute !important;
+}
+.w-ie-100 {
+    width: 100% !important;
+}
+.menu-logo-bottom-ie {
+    position: absolute;
+    bottom: 0;
+    width: 235px;
+    text-align: center;
+}
+.pt-ie {
+    padding-top: 40px !important;
+}
+.pb-ie {
+    padding-bottom: 10px !important;
+}
+
+.mt-ie {
+    margin-top: 10px;
+}
+.float-ie-right {
+    float: right !important;
+}
+.float-ie-left {
+    float: left !important;
+}
+.w-70-ie {
+    width: 70% !important;
+}
+/*.modal-content.modalContent-width {*/
+    /*margin-top: -55% !important;*/
+/*}*/
+/*.modal-ie-mt {*/
+    /*margin-top: -100% !important;*/
+/*}*/
+.modal-header .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.d-inline-ie {
+    display: inline-block;
+}
+.h-100-ie,.bg-reportees,.goals-bg,.measure-bg,.row,.modal-body,.modal-footer{
+    overflow-y:hidden;
+    overflow-x:hidden;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+}
+.w-auto-f-r-ie {
+    width: auto;
+    float: right !important;
+}
+.repotees-card__header {
+    width: auto !important;
+}
+div.d-table-h-100-ie{
+    display: table !important;
+    overflow-y:auto;
+    overflow-x:hidden;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.d-table-cell-middle-ie {
+    display: table-cell;
+    vertical-align: middle;
+}
+.pt-2-ie {
+    padding-top: 10px;
+}
+.ie-profile-dropdown {
+    left: auto !important;
+    right: 0 !important;
+    top: 50px !important;
+}
+.breadcrumb-item{
+    float: left;
+}
+.modal-header {
+    height: 47px;
+}
+.modal-dialog-centered {
+    max-width: fit-content;
+}
+.profile-modal .modal-header{
+    width: 100%;
+}
+.profile-modal .modal-lg .modal-header,
+.profile-modal .modal-lg .modal-body,
+.profile-modal .modal-lg .modal-footer{
+    width: 100%;
+}
+.profile-modal .modal-lg .modal-footer button {
+    width: auto;
+}
+.profile-modal .modal-body{
+    width: 100%;
+}
+.profile-modal .modal-footer{
+    width: 100%;
+}
+.mt-ie-status {
+    margin-top: 16px !important;
+}
+.mt-ie-action {
+    margin-top: 8px !important;
+}
+.modal-dialog-centered::before {
+    display: inline !important;
+}
+.btn-top-ie {
+    margin-top: 29px !important;
+}
+.menu-ul-mb {
+    margin-bottom: 50px !important;
+}
+.header-name {
+    margin-top: 14px;
+}
+.button-menu-mobile {
+    margin-top: 9px !important;
+}
+.sidebar-logo {
+    padding-top: 6px;
+    padding-left: 10px;
+}
+.loginCarousel-Img.three {
+    margin-top: 20px !important;
+}
+.loginCarousel-Img.five {
+    margin-top: 24px !important;
+}
+.repotee-buttons {
+    padding-top: 80px;
+}

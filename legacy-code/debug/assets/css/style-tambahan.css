@@ -1,0 +1,376 @@
+.font-header {
+    font-family: 'Cooper Black', serif;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.55);
+    font-style: italic;
+}
+
+.font-welcome {
+    font-family: 'Edu VIC WA NT Beginner', sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    text-transform: none;
+}
+
+@media (max-width: 768px) { 
+    .font-welcome {
+        font-family: 'Edu VIC WA NT Beginner', sans-serif;
+        font-size: 27px;
+        font-style: italic;
+        text-transform: none;
+    }
+}
+
+@font-face {
+    font-family: 'Varuna';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('https://fonts.cdnfonts.com/s/107546/varuna-personal-use-only.woff') format('woff');
+}
+
+
+.font-welcome-p {
+    font-family: 'Varuna', sans-serif;
+    font-size: 10px;
+    text-transform: none;
+}
+
+.font-kontak {
+    color: white;
+    text-align: center !important;
+}
+
+.font-judul {
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 35px;
+    text-transform: none;
+    color: white;
+}
+
+.download-link {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #085a36;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.download-link:hover {
+   background-color:rgb(8, 151, 89);
+   transform: scale(1.1);
+}
+
+.download-link-form {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #085a36;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.download-link-form {
+    display: inline-block;
+    width: fit-content; /* Biar tombol hanya selebar teks */
+    max-width: fit-content; /* Pastikan tidak melebar */
+}
+
+
+@media (max-width: 767.98px) {
+    .download-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hover-effect {
+        transition: background-color 0.3s;
+    }
+    
+    .hover-effect:hover {
+        background-color: #036d21 !important;
+        color: #ffffff !important;
+    }
+}
+
+.download-link-form:hover {
+   background-color:rgb(8, 151, 89);
+   transform: scale(1);
+}
+
+.whatsapp-link i {
+    font-size: 20px; 
+    color: var(--main-color-orange) !important;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-link i:hover {
+   transform: scale(1.2);
+   color: var(--main-color-hijau) !important;
+}
+
+.content_alur {
+    color: white;
+}
+.biaya_font {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.formulir_font {
+    font-size: 19px;
+    text-align: justify;
+}
+
+.syarat_font {
+    font-size: 21px;
+}
+
+.header_font {
+    text-align: center;
+}
+
+.hover-effect {
+    transition: background-color 0.3s;
+}
+
+.hover-effect:hover {
+    background-color: #036d21 !important;
+    color: #ffffff !important;
+}
+
+.dropdown-menu {
+   display: none;
+}
+
+.dropdown-menu.show {
+   display: block; 
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--main-color-orange) !important;
+    color: white !important;
+}
+
+.bg-form {
+    background-color: var(--main-color-orange) !important;
+}
+
+.btn-form {
+    font-weight: bold !important;
+    transition: background-color 0.3s;
+    background-color: var(--main-color-orange) !important;
+}
+  
+.btn-form:hover {
+    background-color: var(--main-color-hijau) !important;
+    color: white !important;
+}
+
+.font_label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.syarat_pend { 
+    list-style-type: disc;
+    padding-left: 15px;
+    margin-left: 15px;
+    line-height: 1.8;
+}
+
+.font-wa {
+    color: var(--blue-light-secondary) !important;
+}
+
+@media (max-width: 768px) { 
+    .contact-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__flex__items {
+        text-align: center; /* Agar teks dan link di tengah */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Memastikan semua elemen rata tengah */
+    }
+
+    .footer-ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer-ul li {
+        display: block;
+        width: 100%; /* Pastikan link tetap rapi */
+    }
+
+    .footer-ul li a {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit; /* Menggunakan warna default */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact_details {
+        text-align: center; /* Pusatkan teks */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Agar semua elemen berada di tengah */
+    }
+
+    .contact_details .d-flex {
+        flex-direction: column; /* Susun ikon dan teks secara vertikal */
+        align-items: center; /* Pusatkan ikon dan teks */
+    }
+
+    .contact_details i {
+        font-size: 20px; /* Sesuaikan ukuran ikon */
+        margin-bottom: 5px; /* Beri jarak antara ikon dan teks */
+    }
+
+    .contact_details a {
+        display: block;
+    }
+    
+}
+
+div.row.align-items-center {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.logo_white{
+    width: 210px;
+    margin-bottom: 12px;
+}
+.logo_yayasan{
+    width: 410px;
+    margin-bottom: 0px;
+}
+.logo_majelis{
+    width: 215px;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 768px) {
+    .row {
+        align-items: center !important;
+    }
+
+    .logo_yayasan{
+        width: 380px;
+        margin-bottom: 0px;
+    }
+
+    .logo_majelis{
+        width: 140px;
+        margin-bottom: 10px;
+    }
+
+    .mt-5 {
+        margin-top: 1rem !important;
+    }
+
+    .footer__flex__items h6 {
+        margin-bottom: 20px !important;
+    }
+
+    .social {
+        margin-top: 10px;
+    }
+
+    .mt-3 {
+        margin-top: 0rem !important;
+    }
+    
+}
+
+div.row.category_row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.custom-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    background: white;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.custom-popup.d-none, .overlay.d-none {
+   display: none;
+}
+
+.overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   z-index: 1040;
+}
+
+#popupDescription {
+   text-align: center;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu .dropdown-item {
+  padding: 10px 20px !important;
+}
+.dropdown-menu .dropdown-item:last-child {
+  border-bottom: none !important;
+}
+.dropdown-menu li {
+  border-bottom: 1px solid #646464 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+.dropdown-menu::after {
+  display: none !important;
+}
+  
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}
