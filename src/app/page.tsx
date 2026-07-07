@@ -293,7 +293,7 @@ export default async function HomePage() {
               <div className={styles.donationBanks}>
                 <div className={styles.bankItem}>
                   <strong>Bank Syariah Indonesia (BSI)</strong>
-                  <span>7182903829 a.n. Yayasan Bani Sulaiman</span>
+                  <span>2005201775 a.n. Yys Sulaiman Ziyadatul Khair</span>
                 </div>
               </div>
               <Link href="/donation" className="btn btn-accent" style={{ marginTop: '1.5rem' }}>

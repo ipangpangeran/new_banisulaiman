@@ -223,6 +223,17 @@
   line-height: 1.5;
 }
 
+/* wa link donation confirmation */
+.whatsappLink {
+  color: #25D366;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.whatsappLink:hover {
+  text-decoration: underline;
+}
+
 /* QRIS Section */
 .qrisContainer {
   display: flex;

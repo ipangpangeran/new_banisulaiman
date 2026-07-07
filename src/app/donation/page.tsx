@@ -3,6 +3,7 @@ import { db } from '@/lib/db';
 import * as schema from '@/lib/schema';
 import { sql, eq, and, gte } from 'drizzle-orm';
 import { Heart, CreditCard, QrCode, FileSpreadsheet, ArrowRight, ShieldCheck } from 'lucide-react';
+import { QrisImageZoom } from '@/components/QrisImageZoom';
 import styles from './Donation.module.css';
 
 interface DonationReport {
@@ -74,14 +75,30 @@ export default async function DonationPage() {
                 <div className={styles.bankBrand}>BSI</div>
                 <div className={styles.bankDetails}>
                   <strong>Bank Syariah Indonesia (BSI)</strong>
-                  <span className={styles.accountNumber}>7182903829</span>
-                  <span className={styles.accountHolder}>a.n. Yayasan Bani Sulaiman</span>
+                  <span className={styles.accountNumber}>2005201775</span>
+                  <span className={styles.accountHolder}>a.n. Yys Sulaiman Ziyadatul Khair</span>
                 </div>
               </div>
 
               <div className={styles.confirmationNotice}>
                 <strong>💡 Konfirmasi Donasi:</strong>
-                <p>Setelah melakukan transfer, silakan kirimkan bukti transfer kepada Admin Bendahara melalui WhatsApp <strong>+62 815-7201-4321</strong> untuk pencatatan dan verifikasi laporan donasi.</p>
+                <p>
+                  Setelah melakukan transfer atau QRIS, silakan kirimkan bukti transfer kepada
+                  Admin melalui WhatsApp{" "}
+                  <a
+                    href={`https://wa.me/6281572014321?text=${encodeURIComponent(`Assalamualaikum, saya mau konfirmasi sedekah/infaq.
+
+Berikut saya lampirkan bukti transfer.
+
+Jazakumullahu khairan.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.whatsappLink}
+                  >
+                    <strong>+62 815-7201-4321</strong>
+                  </a>{" "}
+                  untuk pencatatan dan verifikasi laporan donasi.
+                </p>
               </div>
             </div>
 
@@ -95,11 +112,12 @@ export default async function DonationPage() {
               <div className={styles.qrisContainer}>
                 <div className={styles.qrisBox}>
                   {/* Mock QRIS graphic */}
-                  <div className={styles.qrisHeader}>QRIS - YAYASAN BANI SULAIMAN</div>
-                  <div className={styles.qrisQrPlaceholder}>
+                  <div className={styles.qrisHeader}>QRIS - YYS SULAIMAN ZIYADATUL</div>
+                  {/* <div className={styles.qrisQrPlaceholder}>
                     <span>📱 [MOCK QRIS CODE]</span>
-                  </div>
-                  <div className={styles.qrisFooter}>NMIDs: ID102830293021</div>
+                  </div> */}
+                  <QrisImageZoom src="/images/qris-real.png" alt="QRIS Yayasan Bani Sulaiman" />
+                  <div className={styles.qrisFooter}>NMIDs: ID102648332770</div>
                 </div>
               </div>
             </div>
