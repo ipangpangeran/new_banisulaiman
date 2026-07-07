@@ -71,10 +71,10 @@ export const Header: React.FC = () => {
               <Globe size={13} />
               <span>{language === 'id' ? 'English' : 'Bahasa'}</span>
             </button>
-            <span className={styles.separator}>|</span>
+            {/* <span className={styles.separator}>|</span>
             <Link href="/admin/login" className={styles.topBtn}>
               <span>{t('nav_admin')}</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
