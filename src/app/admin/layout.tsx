@@ -32,7 +32,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         router.refresh();
       }
     } catch (err) {
-      console.error('Logout error:', err);
+      console.error('Logout error:', err);``
     }
   };
 
