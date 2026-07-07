@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { db } from '@/lib/db';
 import * as schema from '@/lib/schema';
-import { sql } from 'drizzle-orm';
+import { sql, eq } from 'drizzle-orm';
 import { FileText, Users, Heart, HardDrive, Plus, Clock, ExternalLink } from 'lucide-react';
 import styles from './Dashboard.module.css';
 
@@ -11,7 +11,7 @@ export default async function AdminDashboardPage() {
   const articlesCount = (db.select({ count: sql`count(*)` }).from(schema.articles).get() as any)?.count || 0;
   const admissionsCount = (db.select({ count: sql`count(*)` }).from(schema.admissions).get() as any)?.count || 0;
   const mediaCount = (db.select({ count: sql`count(*)` }).from(schema.media).get() as any)?.count || 0;
-  const donationsSum = (db.select({ total: sql`sum(raised_amount)` }).from(schema.donationPrograms).get() as any)?.total || 0;
+  const donationsSum = (db.select({ total: sql`sum(amount)` }).from(schema.donationReports).where(eq(schema.donationReports.status, 'VERIFIED')).get() as any)?.total || 0;
 
   // Query latest 5 applicants
   const latestApplicants = db.select()
