@@ -6,6 +6,8 @@ import { sql, eq } from 'drizzle-orm';
 import { FileText, Users, Heart, HardDrive, Plus, Clock, ExternalLink } from 'lucide-react';
 import styles from './Dashboard.module.css';
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboardPage() {
   // Query metric counts directly from SQLite
   const articlesCount = (db.select({ count: sql`count(*)` }).from(schema.articles).get() as any)?.count || 0;

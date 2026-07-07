@@ -6,6 +6,8 @@ import { Heart, CreditCard, QrCode, FileSpreadsheet, ArrowRight, ShieldCheck } f
 import { QrisImageZoom } from '@/components/QrisImageZoom';
 import styles from './Donation.module.css';
 
+export const dynamic = 'force-dynamic';
+
 interface DonationReport {
   id: number;
   donorName: string;

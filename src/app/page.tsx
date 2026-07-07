@@ -10,6 +10,8 @@ import { BookOpen, Award, CheckCircle2, MapPin, Phone, Mail, Heart, Calendar } f
 import { TeacherPhotoZoom } from '@/components/TeacherPhotoZoom';
 import styles from './Home.module.css';
 
+export const dynamic = 'force-dynamic';
+
 // Helper to determine clean teacher photo path from name
 function getTeacherPhoto(name: string): string {
   const cleanName = name

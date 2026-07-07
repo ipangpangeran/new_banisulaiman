@@ -6,6 +6,8 @@ import styles from './Teachers.module.css';
 import { TeacherPhotoZoom } from '@/components/TeacherPhotoZoom';
 import { BoardSlider } from '@/components/BoardSlider';
 
+export const dynamic = 'force-dynamic';
+
 // Helper to determine clean teacher photo path from name
 function getTeacherPhoto(name: string): string {
   const cleanName = name

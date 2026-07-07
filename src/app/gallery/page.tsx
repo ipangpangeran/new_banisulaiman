@@ -5,6 +5,8 @@ import { eq } from 'drizzle-orm';
 import { GalleryGrid } from '@/components/GalleryGrid';
 import styles from './Gallery.module.css';
 
+export const dynamic = 'force-dynamic';
+
 export default async function GalleryPage() {
   // Query gallery items from sqlite joined with media for photo paths
   const dbItems = db.select({
