@@ -31,12 +31,36 @@
   color: #f8fafc;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logoIcon {
-  color: var(--accent);
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.brandTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.brandSubtitle {
+  margin-top: 2px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
 }
 
 .navMenu {

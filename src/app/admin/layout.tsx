@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LayoutDashboard, FileText, GraduationCap, Settings, LogOut, ShieldAlert, Sun, Moon, ExternalLink, Heart, Images } from 'lucide-react';
+import { LayoutDashboard, FileText, GraduationCap, Settings, LogOut, ShieldAlert, Sun, Moon, ExternalLink, Heart, Images, Mail } from 'lucide-react';
 import { useTheme } from '@/components/ThemeContext';
 import styles from './layout.module.css';
 
@@ -42,16 +42,24 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: '/admin/admissions', label: 'PPDB Pendaftaran', icon: <GraduationCap size={18} /> },
     { href: '/admin/donations', label: 'Laporan Donasi', icon: <Heart size={18} /> },
     { href: '/admin/gallery', label: 'Galeri Media', icon: <Images size={18} /> },
+    { href: '/admin/messages', label: 'Pesan Masuk', icon: <Mail size={18} /> },
     { href: '/admin/settings', label: 'Pengaturan Web', icon: <Settings size={18} /> },
   ];
 
   return (
     <div className={styles.adminContainer}>
-      {/* Sidebar */}
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
-          <ShieldAlert className={styles.logoIcon} size={22} />
-          <span>Bani Sulaiman CMS</span>
+          <img
+            src="/images/logo-aja.png"
+            alt="Logo"
+            className={styles.logoIcon}
+          />        
+
+          <div className={styles.brandText}>
+            <div className={styles.brandTitle}>CMS</div>
+            <div className={styles.brandSubtitle}>Bani Sulaiman</div>
+          </div>
         </div>
         
         <nav className={styles.navMenu}>

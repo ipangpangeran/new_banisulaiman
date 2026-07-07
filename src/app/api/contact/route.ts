@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { db } from '@/lib/db';
+import * as schema from '@/lib/schema';
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,8 +19,15 @@ export async function POST(req: NextRequest) {
     Message: ${message}
     `);
 
-    // In a production server, this endpoint would trigger SMTP/nodemailer
-    // or send a Telegram bot / Whatsapp notification.
+    // Save submission to database
+    db.insert(schema.contactMessages).values({
+      name,
+      email,
+      phone,
+      subject,
+      message,
+      status: 'UNREAD'
+    }).run();
     
     return NextResponse.json({ message: 'Pesan terkirim' }, { status: 200 });
 

@@ -185,3 +185,16 @@ export const siteSettings = sqliteTable('site_settings', {
   key: text('key').primaryKey(),
   value: text('value').notNull() // JSON strings
 });
+
+// 13. Contact Messages
+export const contactMessages = sqliteTable('contact_messages', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  name: text('name').notNull(),
+  email: text('email').notNull(),
+  phone: text('phone').notNull(),
+  subject: text('subject').notNull(),
+  message: text('message').notNull(),
+  status: text('status').default('UNREAD').notNull(), // 'UNREAD', 'READ', 'REPLIED'
+  notes: text('notes'), // admin follow up notes
+  createdAt: integer('created_at', { mode: 'timestamp' }).default(sql`(strftime('%s', 'now'))`)
+});
