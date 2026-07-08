@@ -7,7 +7,7 @@ import { getRequestSession } from '@/lib/auth';
 // GET: Returns settings as an object of key-value
 export async function GET(req: NextRequest) {
   try {
-    const list = db.select().from(schema.siteSettings).all();
+    const list = db.select().from(schema.siteSettings).all() as any[];
     const settingsObj: Record<string, string> = {};
     list.forEach((s) => {
       settingsObj[s.key] = s.value;

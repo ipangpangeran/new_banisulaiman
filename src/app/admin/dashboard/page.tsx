@@ -20,7 +20,7 @@ export default async function AdminDashboardPage() {
     .from(schema.admissions)
     .orderBy(sql`created_at DESC`)
     .limit(5)
-    .all();
+    .all() as any[];
 
   // Query latest 5 articles
   const latestArticles = db.select({
@@ -32,7 +32,7 @@ export default async function AdminDashboardPage() {
     .from(schema.articles)
     .orderBy(sql`created_at DESC`)
     .limit(5)
-    .all();
+    .all() as any[];
 
   return (
     <div className={styles.dashboard}>

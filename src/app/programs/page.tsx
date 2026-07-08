@@ -6,7 +6,7 @@ import { BookOpen, GraduationCap, CheckCircle, Clock } from 'lucide-react';
 import styles from './Programs.module.css';
 
 export default async function ProgramsPage() {
-  const programsList = db.select().from(schema.programs).all();
+  const programsList = db.select().from(schema.programs).all() as any[];
 
   return (
     <div className={styles.wrapper}>

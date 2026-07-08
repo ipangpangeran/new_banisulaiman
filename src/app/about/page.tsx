@@ -24,8 +24,8 @@ export default async function AboutPage() {
     missionList = [];
   }
 
-  const foundationBoard = teachersList.filter(t => t.type === 'FOUNDATION_BOARD');
-  const instructors = teachersList.filter(t => t.type === 'TEACHER');
+  const foundationBoard = (teachersList as any[]).filter(t => t.type === 'FOUNDATION_BOARD');
+  const instructors = (teachersList as any[]).filter(t => t.type === 'TEACHER');
 
   const facilities = [
     { title: 'Masjid Bani Sulaiman', desc: 'Masjid utama berkapasitas 300 jamaah yang diresmikan tahun 2017 sebagai pusat ibadah dan kajian Al-Qur\'an.', emoji: '🕌' },
