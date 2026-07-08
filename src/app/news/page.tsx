@@ -23,7 +23,7 @@ export default async function NewsPage({ searchParams }: PageProps) {
   const offset = (currentPage - 1) * limit;
 
   // 1. Fetch categories
-  const categoriesList = db.select().from(schema.categories).all();
+  const categoriesList = db.select().from(schema.categories).all() as any[];
   
   // Find selected category ID
   let activeCategoryId: number | undefined;
@@ -72,7 +72,7 @@ export default async function NewsPage({ searchParams }: PageProps) {
     .orderBy(sql`${schema.articles.publishDate} DESC`)
     .limit(limit)
     .offset(offset)
-    .all();
+    .all() as any[];
 
   return (
     <div className={styles.wrapper}>

@@ -27,7 +27,7 @@ export default async function TeachersPage() {
   const teachersList = db.select()
     .from(schema.teachers)
     .orderBy(schema.teachers.order)
-    .all();
+    .all() as any[];
 
   const boardMembers = teachersList.filter(t => t.type === 'FOUNDATION_BOARD');
   const instructors = teachersList.filter(t => t.type === 'TEACHER');

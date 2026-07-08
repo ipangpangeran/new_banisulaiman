@@ -18,7 +18,7 @@ export default async function GalleryPage() {
   })
     .from(schema.galleryItems)
     .leftJoin(schema.media, eq(schema.galleryItems.mediaId, schema.media.id))
-    .all();
+    .all() as any[];
 
   // If database contains items, map them correctly.
   const mappedItems = dbItems.map(item => ({

@@ -34,9 +34,9 @@ function getSetting(settings: any[], key: string, fallback: string = ''): string
 
 export default async function HomePage() {
   // 1. Fetch configurations & entities from SQLite
-  const settingsList = db.select().from(schema.siteSettings).all();
-  const programsList = db.select().from(schema.programs).all();
-  const teachersList = db.select().from(schema.teachers).orderBy(schema.teachers.order).all();
+  const settingsList = db.select().from(schema.siteSettings).all() as any[];
+  const programsList = db.select().from(schema.programs).all() as any[];
+  const teachersList = db.select().from(schema.teachers).orderBy(schema.teachers.order).all() as any[];
   
   // Fetch latest 3 published articles
   const articlesList = db.select()
@@ -44,7 +44,7 @@ export default async function HomePage() {
     .where(sql`status = 'PUBLISHED'`)
     .orderBy(sql`created_at DESC`)
     .limit(3)
-    .all();
+    .all() as any[];
 
   // Parse list settings
   const schoolName = getSetting(settingsList, 'school_name', "Ma'had Tahfidz Bani Sulaiman");
