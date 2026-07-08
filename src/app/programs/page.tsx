@@ -22,7 +22,7 @@ export default async function ProgramsPage() {
       <section className="section">
         <div className="container">
           <div className={styles.programGrid}>
-            {programsList.map((program) => (
+            {programsList.map((program: any) => (
               <div key={program.id} className={styles.programCard}>
                 <div className={styles.cardHeader}>
                   <div className={styles.iconBox}>
@@ -52,7 +52,7 @@ export default async function ProgramsPage() {
                   <div className={styles.curriculum}>
                     <h3>Materi & Kurikulum Utama</h3>
                     <ul className={styles.currList}>
-                      {program.curriculum.split(',').map((item, idx) => (
+                      {program.curriculum.split(',').map((item: string, idx: number) => (
                         <li key={idx}>
                           <CheckCircle size={16} className={styles.checkIcon} />
                           <span>{item.trim()}</span>
